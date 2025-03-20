@@ -1,51 +1,18 @@
 import { Text, View, TouchableOpacity, useColorScheme } from "react-native";
 import { useState } from "react";
 
+import { addOne, minusOne, square, divideByPi, reset, round, nothing } from "../buttonFunctions.js"
+
 export default function Index() {
   const [count, setCount] = useState(0)
   const [started, setStarted] = useState(false)
-
-  const addOne = () => {
-    !started ? setStarted(true) : ""
-    setCount(count + 1)
-  }
-
-  const minusOne = () => {
-    !started ? setStarted(true) : ""
-    setCount(count - 1)
-  }
-
-  const square = () => {
-    !started ? setStarted(true) : ""
-    setCount(count * count)
-  }
-
-  const divideByPi = () => {
-    !started ? setStarted(true) : ""
-    setCount(count / Math.PI)
-  }
-
-  const round = () => {
-    !started ? setStarted(true) : ""
-
-    setCount(Math.round(count))
-  }
-
-  const nothing = () => {
-    !started ? setStarted(true) : ""
-    return
-  }
-
-  const reset = () => {
-    setCount(0)
-    setStarted(false)
-  }
 
   let theme = useColorScheme()
   const isDarkMode = theme === "dark"
   return (
     <View
       style={{
+
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
